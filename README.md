@@ -1,1 +1,2 @@
-# magic.ai-fe
+# BW-Challenge.
+

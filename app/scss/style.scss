@@ -1,0 +1,456 @@
+@import "utilities-variables";
+
+/********************************************
+    Bootstrap elements override starts
+********************************************/
+
+.tooltip-inner
+{
+  background: #999;
+}
+
+.tooltip.top .tooltip-arrow
+{
+  border-top-color: #999;
+}
+
+/********************************************
+    Bootstrap elements override ends
+********************************************/
+
+/********************************************
+       Toastr Elements Override starts
+********************************************/
+#toast-container > div, #toast-container > :hover
+{
+  -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+
+
+/********************************************
+       Toastr Elements Override starts
+********************************************/
+
+
+.loading-fullscreen
+{
+  display:block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  @include bg-opacity($white, 1)
+}
+
+
+/********************************************
+            Loading SVG Starts
+********************************************/
+
+#loading
+{
+  display: block;
+  position: absolute;
+  background: rgba(255,255,255,.8);
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+#loading .content
+{
+  position: absolute;
+  width: 150px;
+  height: 130px;
+  margin: auto;
+  text-align: center;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#loading .content img
+{
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+
+/********************************************
+            Loading SVG Ends
+********************************************/
+
+body{
+  font-family: 'Lato', sans-serif;
+  background: $off-white;
+  line-height: 1.6em;
+  @include text-color($gray)
+}
+
+*
+{
+  outline:none!important;
+}
+
+p{
+  line-height: 1.2em;
+}
+
+.main-view .form-control
+{
+  height: auto;
+  min-height: 40px;
+  padding: 10px 12px;
+}
+
+#header
+{
+  @include bg-opacity($carbon-black, .98);
+  border-bottom: none;
+}
+
+.sm-line-height{
+  line-height: 0.7em;
+}
+
+
+.navbar-default .navbar-nav > li > a
+{
+  color: $light-gray;
+}
+
+.nav.login-btns >li > a
+{
+  padding: 5px 10px;
+}
+
+.nav.login-btns >li > a.signup-header-btn,.signup-header-btn
+{
+  background: $primary-green-hex;
+  color: #ffffff;
+  border:$primary-green-hex 1px solid;
+  margin-right: 10px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+{
+  color: $white;
+}
+
+.main-view
+{
+  margin-top: 50px;
+}
+
+.navbar-brand
+{
+  width: 110px;
+  padding: 13.5px 10px;
+}
+
+.navbar-toggle, .navbar-toggle:active
+{
+  padding: 5px 10px;
+  color: $primary-blue-hex;
+}
+
+.navbar-toggle:hover
+{
+  padding: 5px 10px;
+  background-color: $primary-blue-hex!important;
+  border-color: $primary-blue-hex;
+  color: #ffffff;
+}
+
+
+/*homepage radias progress bars*/
+.progress-container {
+  text-align: center;
+}
+
+.progress-container div {
+  display: inline-block;
+}
+
+.rbc-center-text {
+  fill: white;
+}
+
+.rbc-center-text-line0 {
+  font-size: 30px;
+}
+
+/********************************************
+**************** How It Works **************
+********************************************/
+*{
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.hiw-icon
+{
+  position: relative;
+  width: 75px;
+  height:75px;
+  margin: 0 auto;
+  background: $primary-green-hex;
+  border-radius:50px;
+  padding: 15px;
+  top:0;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.hiw-item:hover .hiw-icon
+{
+  top:-5px;
+  box-shadow: 0 3px 10px 0 rgba(125,125,125,.35);
+}
+
+.hiw-item p
+{
+  font-size: 17px;
+  line-height:1.4em;
+  @include text-color($gray);
+}
+
+/********************************************
+**************** Dashboard ***************
+********************************************/
+
+.bar-graph-container
+{
+  position: relative;
+  height: 500px;
+  margin-top: 20px;
+}
+
+#dashboard-graph
+{
+  width: 100%;
+  height:100%;
+  margin-bottom: -2px;
+  padding-top: 15px;
+  background: rgb(245, 245, 245)
+}
+
+#bar-graph rect text
+{
+  transform: rotate(90deg);
+  font-size: 12px;
+  display: block;
+  color: #ffffff;
+}
+
+.db-month-dropdown, .db-month-dropdown:active, .db-month-dropdown:focus, .db-month-dropdown:visited
+{
+  height: 50px !important;
+  background: rgba(225,225,225,.9);
+  border: rgba(225,225,225,.9);
+  border-left: 10px solid rgba(230,230,230,1);
+  border-right: 10px solid rgba(230,230,230,1);
+  padding: 15px 20px 15px 30px!important;
+  position: relative;
+  font-size: 18px;
+  outline:0 !important;
+  box-shadow: none;
+  color: $carbon-black;
+  box-shadow: 0 0 0 1px $light-gray;
+}
+
+.db-service-item
+{
+  @include border($light-gray,1px);
+  position: relative;
+  background: $off-white;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  top:0;
+  margin-bottom: 15px;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.db-service-item:hover
+{
+  @include border($primary-green-hex,1px);
+}
+
+.db-service-item hr
+{
+  @include border-top($light-gray,1px);
+}
+
+.service-details-graph
+{
+  @include border-top($light-gray,1px)
+}
+
+.db-service-icon
+{
+  position: relative;
+  background: $white;
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.db-service-name
+{
+  text-align: left;
+  color: $carbon-black;
+  font-size: 26px;
+}
+
+.db-premium-service-container .premium-service-description
+{
+  height: 45px;
+}
+
+.db-service-meta
+{
+  @include margin-top(10px);
+}
+
+.db-service-meta-details
+{
+  text-align: center;
+  @include border-right($light-gray, 1px);
+}
+
+.db-service-meta-details h2
+{
+  color:$carbon-black;
+  @include margin-top(5px);
+}
+
+.db-service-meta-details p
+{
+  color:$semi-dark-gray;
+}
+
+.home-hero-header
+{
+  position: relative;
+  min-height: 200px;
+  background: #673AB7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #673AB7 , #512DA8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #673AB7 , #512DA8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+}
+
+.home-hero-content
+{
+  position: relative;
+  z-index: 2;
+  margin-top: 75px;
+  padding: 50px 10px;
+}
+
+.company-logos-bg
+{
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: #ffffff;
+}
+
+.company-logos-bg img
+{
+  width: 6.5%;
+}
+
+.dashboard-sidebar{
+  position: fixed;
+  width: 75px;
+  height: 100vh;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  @include bg-opacity($dark-gray, 1);
+}
+
+.dashboard-content
+{
+  width: 100%;
+  padding-left: 75px;
+}
+
+.dashboard-sidebar ul
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dashboard-sidebar ul li
+{
+  text-align: center;
+  padding: 8px 5px;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.dashboard-sidebar ul li:hover, .dashboard-sidebar ul li.sidebar-active
+{
+  @include bg-opacity($carbon-black,1);
+}
+
+.dashboard-sidebar ul li.bg-green
+{
+  @include bg-opacity($primary-green-hex,1);
+}
+
+.dashboard-sidebar ul li a, .dashboard-sidebar ul li a:hover, .dashboard-sidebar ul li a:focus, .dashboard-sidebar ul li a:visited
+{
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.dashboard-sidebar ul li i
+{
+  font-size: 1.5em;
+}
+
+.dashboard-sidebar ul li p
+{
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.top-spent-category-name
+{
+  font-size: 12px;
+}
+
+.top-spent-category-details h3
+{
+  font-size: 22px;
+}
+
+.top-spent-category-details p
+{
+  font-size: 12px;
+}

@@ -1,0 +1,112 @@
+<div class="container-fluid bg-dark-green home-hero-header" ng-init="landing.init()">
+    <div class="container">
+        <div class="row row-centered mtopbot50">
+
+            <div class="col-md-8 col-sm-10 col-centered rounded-corners">
+                <h1 class="mtopbot0">
+                    <i class="fa fa-github fa-5x text-white"></i>
+                </h1>
+
+                <h1 class="text-white mtopbot10">
+                    <i class="fa fa-star pright5"></i>
+                    <i class="fa fa-star pright5"></i>
+                    <i class="fa fa-star pright5"></i>
+                    <i class="fa fa-star pright5"></i>
+                    <i class="fa fa-star pright5"></i>
+                </h1>
+
+                <h1 class="text-white mtop0">Github All Star Champions</h1>
+                <h4 class="text-white">List of 100 most starred Github public repositories</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid ptop25 pbot50 bg-white">
+
+    <div class="row row-centered mleftright0 border-bottom border-gray pbot15 mbot10">
+        <div class="col-sm-4 col-centered">
+            <h3 class="text-left mtop5 text-blue">
+                Github Repositories
+            </h3>
+        </div>
+        <div class="col-sm-4 col-centered">
+            <div class="form-group mtopbot15w">
+                <input type="text" ng-model="query" class="form-control bg-light-gray" placeholder="Filter result by search">
+            </div>
+        </div>
+        <div class="col-sm-4 col-centered text-right">
+            <div class="btn-group">
+                <button class="btn btn-default disabled">
+                    View:</button>
+                <a class="btn btn-default" ng-class="{'active':landing.config.views.showGridView}" ng-click="landing.changeView('showGridView')">
+                    <i class="fa fa-th fa-lg fb"></i>
+                </a>
+                <a class="btn btn-default" ng-class="{'active':landing.config.views.showTableView}" ng-click="landing.changeView('showTableView')">
+                    <i class="fa fa-list fa-lg fb"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-fullscreen" ng-show="landing.config.showLoadingWheel">
+        <div class="loading-meta text-center mtop75">
+            <img src="../img/icons/loading-circle.svg" width="75px" height="75px" class="margin-auto" alt="">
+            <p class="mtop10">loading ...</p>
+        </div>
+    </div>
+
+    <div class="row row-centered mleftright0" ng-show="landing.config.views.showGridView">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 pleftright5" ng-repeat="item in landing.config.data.githubObj | filter: query">
+            <div class="bg-light-gray border-all border-gray rounded-corners overflow-hidden mtopbot5 pad0">
+                <h4 class="text-white text-capitalize ptopbot10 mtop0 bg-blue" ng-text-truncate="item.name"
+                    ng-tt-chars-threshold="18" ng-tt-no-toggling></h4>
+                <h3 class="mtopbot0 ptopbot10 text-blue">
+                    <i class="fa fa-star text-green"></i> {{item.stargazers_count}}
+                </h3>
+                <h3 class="mtop10">
+                    <a class="btn btn-default contributor-btn-{{$index}}" ng-click="landing.getTopContributor(item.contributors_url, $index)">Show Top Contributor</a>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mleftright0" ng-show="landing.config.views.showTableView">
+
+        <table class="table table-striped custab border-all border-gray rounded-corners overflow-hidden">
+            <thead>
+                <tr>
+                    <th class="text-blue">Repository Name</th>
+                    <th class="text-blue">Stars</th>
+                    <th class="text-blue">Top Contributor</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="item in landing.config.data.githubObj | filter: query">
+                <td class="text-gray">{{item.name}}</td>
+                <td class="text-gray"><i class="fa fa-star text-green"></i> {{item.stargazers_count}}</td>
+                <td>
+                    <a class="btn btn-default contributor-btn-{{$index}}"  ng-click="landing.getTopContributor(item.contributors_url, $index)">Show Top Contributor</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
